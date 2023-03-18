@@ -109,7 +109,7 @@ background-repeat: no-repeat;
 background-size: cover;
 background-position: center center;
 width: 100vw;
-height: 100vh;
+height: 70vh;
 position: relative;
 z-index: 1;    
 max-width:100%; 
@@ -117,12 +117,12 @@ display:flex;
 
 }
 .mask_home{
-    height: 100vh;
+    height:70vh;
     width: 100vw;
     background: linear-gradient(#9e715c9d, rgb(8, 10, 29));
 }
 .planets{
-    height: 100vh;
+    height: 70vh;
     position: absolute;
     /*width: 100vw;*/
     z-index:3;
@@ -163,6 +163,7 @@ display:flex;
     left:-5%;
     scale:0.12;
     top:-120%;
+    opacity:0;
 }
 
 .home a{
@@ -171,13 +172,13 @@ display:flex;
 }
 /*stars*/
 .stars{
-    height: 100vh;
+    height: 70vh;
     position: absolute;
     width: 100vw; 
     overflow: hidden;
   }
   .starWrap{
-    height: 100vh;
+    height: 70vh;
     width: 100vw;
     position:relative;
   }
@@ -297,6 +298,7 @@ scale:1.1;
     opacity: 0.97;
     width:245px; 
     height:300px;
+    
    }
 #about h2{
     color:#e9e8ee;
@@ -314,6 +316,7 @@ scale:1.1;
     border-radius: 10px;
     align-items: center;
     perspective: 1000px;
+    height: 70vh;
 }
 .mask_skills{
     backdrop-filter: blur(5px) saturate(200%);
@@ -509,7 +512,14 @@ section{
 
 /*RESPONSIVE*/
   @media (min-width: 768px) { 
- 
+    .home,.mask_home,.planets,.stars,.starWrap{
+        height: 100vh;
+    }  
+    .rocket {
+        opacity:1;} 
+    #skills{
+        height:90vh;
+    }
     .intro_img{
         height:430px;
     }
