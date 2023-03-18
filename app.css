@@ -316,7 +316,7 @@ scale:1.1;
     border-radius: 10px;
     align-items: center;
     perspective: 1000px;
-    height: 70vh;
+    height: 80vh;
 }
 .mask_skills{
     backdrop-filter: blur(5px) saturate(200%);
@@ -512,14 +512,8 @@ section{
 
 /*RESPONSIVE*/
   @media (min-width: 768px) { 
-    .home,.mask_home,.planets,.stars,.starWrap{
-        height: 100vh;
-    }  
-    .rocket {
-        opacity:1;} 
-    #skills{
-        height:90vh;
-    }
+   
+  
     .intro_img{
         height:430px;
     }
@@ -550,6 +544,7 @@ section{
 
 
     @media (min-width: 992px) {
+      
         .intro_img{
             height:480px;
             
@@ -591,6 +586,14 @@ section{
        
     } 
     @media (min-width: 1200px) { 
+        .home,.mask_home,.planets,.stars,.starWrap{
+            height: 100vh;
+        }  
+        .rocket {
+            opacity:1;} 
+        #skills{
+            height:90vh;
+        }
         .intro_img{
             height:522px;
             padding-top:120px;
