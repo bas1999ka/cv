@@ -201,7 +201,7 @@ display:flex;
     animation: float 6s ease-in-out infinite;
     padding-top: 140px;
     transform-style: preserve-3d;
-    height: 440px;
+    height: 400px;
 }
 
 .texts{
