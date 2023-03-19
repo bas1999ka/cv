@@ -109,7 +109,7 @@ background-repeat: no-repeat;
 background-size: cover;
 background-position: center center;
 width: 100vw;
-height: 70vh;
+height: 100vh;
 position: relative;
 z-index: 1;    
 max-width:100%; 
@@ -117,12 +117,12 @@ display:flex;
 
 }
 .mask_home{
-    height:70vh;
+    height:100vh;
     width: 100vw;
     background: linear-gradient(#9e715c9d, rgb(8, 10, 29));
 }
 .planets{
-    height: 70vh;
+    height: 100vh;
     position: absolute;
     /*width: 100vw;*/
     z-index:3;
@@ -172,13 +172,13 @@ display:flex;
 }
 /*stars*/
 .stars{
-    height: 70vh;
+    height:100vh;
     position: absolute;
     width: 100vw; 
     overflow: hidden;
   }
   .starWrap{
-    height: 70vh;
+    height: 100vh;
     width: 100vw;
     position:relative;
   }
@@ -199,18 +199,19 @@ display:flex;
  .intro_img{
     z-index:4;
     animation: float 6s ease-in-out infinite;
-    padding-top: 100px;
+    padding-top: 140px;
     transform-style: preserve-3d;
+    height: 440px;
 }
 
 .texts{
-    padding-top:20px;
+    padding-top:40px;
     text-align: center;
     z-index:4;
 }
 
   .home h1{
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     letter-spacing: 0.1rem;
     text-shadow: 0 0 10px #0652DD, 0 0 50px #0652DD, 0 0 100px #0652DD;
     font-weight:500;
@@ -240,7 +241,7 @@ cursor: pointer;
 background-size: 300% 100%;
 -webkit-transition: all .4s ease-in-out;
 transition: all .4s ease-in-out;
-scale:1.1;
+scale:1.3;
 }
 
 .home .btn:hover{
@@ -512,22 +513,26 @@ section{
 
 /*RESPONSIVE*/
   @media (min-width: 768px) { 
-   
   
+    .home .btn {
+    scale:1.1;
+    }
     .intro_img{
         height:430px;
+        padding-top: 100px; 
     }
-    .intro{
-        padding-top: 50px;
-    }
+    
     .texts{
         padding-top: 150px;
     }
     .home h1{
-        font-size:2.1rem;
+        font-size: 2.2rem;
          }
      #about img{
             scale: 0.7;
+        }
+        .intro{
+            padding-top: 50px;
         }
     
     #about p{
@@ -586,9 +591,9 @@ section{
        
     } 
     @media (min-width: 1200px) { 
-        .home,.mask_home,.planets,.stars,.starWrap{
+       /* .home,.mask_home,.planets,.stars,.starWrap{
             height: 100vh;
-        }  
+        }  */
         .rocket {
             opacity:1;} 
         #skills{
