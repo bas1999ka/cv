@@ -199,13 +199,13 @@ display:flex;
  .intro_img{
     z-index:4;
     animation: float 6s ease-in-out infinite;
-    padding-top: 100px;
+    padding-top: 140px;
     transform-style: preserve-3d;
     height: 390px;
 }
 
 .texts{
-    padding-top:40px;
+    padding-top:30px;
     text-align: center;
     z-index:4;
 }
