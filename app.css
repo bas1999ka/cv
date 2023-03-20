@@ -199,7 +199,7 @@ display:flex;
  .intro_img{
     z-index:4;
     animation: float 6s ease-in-out infinite;
-    padding-top: 140px;
+    padding-top: 100px;
     transform-style: preserve-3d;
     height: 390px;
 }
