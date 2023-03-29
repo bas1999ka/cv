@@ -13,6 +13,67 @@
         opacity: 1;
     }
 }
+@keyframes land {
+    0%   {
+        transform: rotate(-42deg)
+        scale(0.08);
+     }
+    25%{
+        transform: rotate(-90deg)
+        translateY(-170px)
+        scale(0.09);
+    
+    }
+ 50%{
+    transform: 
+        rotate(0deg)
+        scale(0.09);
+        left: -40%;
+
+  }
+  100%{
+        transform: rotate(-42deg)
+        scale(0.08);
+     }
+  }
+
+
+
+@keyframes rocket{
+    0%{      
+transform: rotate(-45deg) translate(0px, 0px) scale(1.1);
+}
+25%{
+    transform: rotate(-45deg) translate(0px, 0px) scale(1)
+}
+50%{
+    transform: translate(-1200px,-4300px)
+    scale(0.8);
+}
+100%{
+    transform: rotate(-45deg),scale(1.1);
+}
+   }
+
+@keyframes neon {
+      
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  
+        text-shadow:
+        0 0 4px #0652DD,
+        0 0 11px #0652DD,
+        0 0 19px #0652DD,
+        0 0 40px #0652DD,
+        0 0 80px #0652DD,
+        0 0 90px #0652DD,
+        0 0 100px #0652DD,
+        0 0 150px #0652DD;
+    
+    }
+    20%, 24%, 55% {        
+        text-shadow: none;
+    }    
+  }
 
 @keyframes round {
     0% {
@@ -54,8 +115,30 @@
   @keyframes stars{ 
     100% {transform: rotate(-360deg);}
   }
-  
-  
+
+  @keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+  }
   
 /*MAIN*/
 body {
@@ -65,7 +148,7 @@ body {
     overflow-x: hidden !important;
     background-color:#fcfcfc;
     background: rgb(252,252,252);
-background: linear-gradient(0deg, rgb(11, 12, 43) 0%, rgb(8, 10, 29) 76%);
+    background: linear-gradient(0deg, rgb(11, 12, 43) 0%, rgb(8, 10, 29) 76%);
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -124,19 +207,17 @@ display:flex;
 .planets{
     height: 100vh;
     position: absolute;
-    /*width: 100vw;*/
     z-index:3;
-    display:none;
+    visibility: hidden;
 
 }
-.planets img{
+.planets img:nth-of-type(1){
     position: absolute;
     right:0;
     left:0%;
     scale:0.15;
     top:-88%;
     animation: round 160s linear infinite;  
-
 }
 .planets img:nth-of-type(2){
     position: absolute;
@@ -154,17 +235,19 @@ display:flex;
     top:-140%;
     opacity:0;
     animation: round 160s linear infinite;  
+    
 }
 
 
-.rocket{
+.planets img:nth-of-type(4){
     z-index: 4;
     position: absolute;
     right:0;
-    left:-5%;
-    scale:0.12;
-    top:-120%;
-    opacity:0;
+    left:-38%;
+    scale:0.13;
+    top:-105%;
+    animation: rocket 6s ease-in-out infinite;  
+
 }
 
 .home a{
@@ -173,7 +256,7 @@ display:flex;
 }
 /*stars*/
 .stars{
-    height:100vh;
+   height:100vh;
     position: absolute;
     width: 100vw; 
     overflow: hidden;
@@ -191,7 +274,7 @@ display:flex;
     width: 100%;
     border-radius: 100%;
     margin: auto;
-    right: 0; /*?-10%ledt*/
+    right: 0; /*?-10%le*/
     animation: stars 120s linear infinite;  
     transform: rotate(0deg);
     top: -35%;
@@ -219,7 +302,6 @@ display:flex;
     color: #d4d4d4;
     z-index:2;
     animation: float1 6s ease-in-out infinite;
-  /* animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) 1s both;*/
 }
 
 .home .btn {
@@ -254,6 +336,7 @@ scale:1.3;
 .btn[class*="btn-outline-"] {
     padding-top: .6rem;
     padding-bottom: .6rem;
+    animation: wiggle 2s  linear infinite;
 }
 /* ABOUT */
 #about{
@@ -293,6 +376,8 @@ scale:1.3;
 #about p{
     font-weight: 400;
     font-size: 1rem;
+    -webkit-text-shadow:0 0 5px #e2e2e2, 0 0 10px;
+    text-shadow: 0 0 5px #b8b8b8, 0 0 10px #b8b8b8;
 }
 
 #about img{
@@ -300,16 +385,17 @@ scale:1.3;
     opacity: 0.97;
     width:245px; 
     height:300px;
-    
+    -webkit-box-shadow: 0 0 5px #053da5, 0 0 10px #053da5, 0 0 30px #053da5;
+    box-shadow: 0 0 5px #053da5, 0 0 10px #053da5, 0 0 30px #053da5;
    }
 #about h2{
     color:#e9e8ee;
-    -webkit-text-shadow: 0 0 10px #0652DD, 0 0 50px #0652DD, 0 0 100px #0652DD;
-    text-shadow: 0 0 10px #0652DD, 0 0 50px #0652DD, 0 0 100px #0652DD;
+    -webkit-text-shadow: 0 0 10px #0652DD, 0 0 20px #0652DD, 0 0 50px #0652DD;
+    text-shadow: 0 0 10px #0652DD, 0 0 20px #0652DD, 0 0 50px #0652DD;
 }
 /*skills*/
 #skills{
-    -webkit-box-shadow: 0 0 10px #053da5, 0 0 30px #053da5, 0 0 60px #053da5;
+    -webkit-box-shadow: 0 0 10px #053da5, 0 0 30px #053da5, 0 0 40px #053da5;
     box-shadow: 0 0 10px #053da5, 0 0 30px #053da5, 0 0 40px #053da5;
     background-image: url('./img/6864257-min.jpg');
     background-repeat: no-repeat;
@@ -326,7 +412,15 @@ scale:1.3;
     border-radius: 10px;
     border: 1px solid #203b4d83;
 }
-
+.rocket{
+    position: absolute;
+    scale:0.1;
+    top:-230%;
+    left:40%;
+    visibility: hidden;
+    animation: land 10s linear infinite;
+}
+    
 #skills ul {
     list-style-type: none;
     text-align: left;
@@ -339,6 +433,11 @@ scale:1.3;
     -webkit-text-shadow: 0 0 1px #2e2e94, 0 0 3px #2e2e94;
     text-shadow: 0 0 1px #2e2e94, 0 0 3px #2e2e94;
 }
+.neonText {
+    animation: neon 1s infinite alternate;
+    color: #ffffff;
+  }
+
 
 #skills i{
     text-shadow:none;
@@ -451,8 +550,6 @@ font-size: 2rem;
 
 .copyright{
     background-color: #040220;
-   /* -webkit-box-shadow:  0 0 1px #7f7f8b, 0 0 10px #7f7f8b;
-    box-shadow: 0 0 1px #7f7f8b, 0 0 10px #7f7f8b;*/
     -webkit-text-shadow:  0 0 1px #7a7a7a, 0 0 5px #7a7a7a;
     text-shadow: 0 0 1px #7a7a7a, 0 0 5px #7a7a7a;
 }
@@ -465,7 +562,6 @@ font-size: 2rem;
     color: #e0dddb;
    -webkit-box-shadow:  0 0 1px #7f7f8b, 0 0 10px #7f7f8b;
    box-shadow: 0 0 1px #7f7f8b, 0 0 10px #7f7f8b;
-
 }
 
 .contact a {
@@ -485,7 +581,6 @@ font-size: 2rem;
     color:  #d1d1d4;
     -webkit-text-shadow:  0 0 1px #0004ff, 0 0 10px #0004ff;
     text-shadow: 0 0 1px #0004ff, 0 0 10px #0004ff;
-
 }
 .under_text{
 font-weight: 500;
@@ -495,31 +590,32 @@ section{
     margin-top: 170px;
     margin-bottom: 170px;
 }
-/*
-.hidden{
-    opacity:0;
-    filter:blur(5px);
-    transform:translateX(-100%);
-    transition: all 1s;
-}
-
-.show{
-    opacity:1;
-    filter:blur(0);
-    transform:translateX(0);
-}
-*/
 
 
 /*RESPONSIVE*/
-  @media (min-width: 768px) { 
-  
+/*ipad*/
+@media only screen
+  and (min-device-width : 768px)
+  and (max-device-width : 1024px)
+  and (orientation:portrait) 
+{
+    .home, .mask_home,.stars,
+             .starWrap{
+                height: 60vh;
+            }
+    
+}
+@media (min-width: 768px) { 
+    .home, .mask_home,.stars,
+    .starWrap{
+       height: 82vh;
+   }
     .home .btn {
     scale:1.1;
     }
     .intro_img{
         height:430px;
-        padding-top: 100px; 
+        padding-top: 120px; 
     }
     
     .texts{
@@ -537,13 +633,7 @@ section{
     
     #about p{
     font-size: 0.95rem;
-}
-.rocket{
-    top: -120%;
-    left:-5%;
-   }
- 
-  
+} 
   }
 
 
@@ -557,8 +647,13 @@ section{
             font-size:2.5rem;
              }
     
-             .home, .mask_home{
+             .home, .mask_home,.stars,
+             .starWrap{
                 height: 90vh;
+            }
+            .rocket{
+                visibility: visible;
+
             }
             #about p{
                 font-weight: 400;
@@ -570,15 +665,15 @@ section{
            /* .mask_skills{
               width:40vw;
             }*/
-            .rocket{
-                top: -122%;
-                left:-5%;
-               }
+       
                 .planets {
-                    top:-10%;
-                    left:-15%;
-                    display: block;
+                    top:-12%;
+                    left:-10%;
+                    visibility: visible;
                 }
+                .planets img:nth-of-type(4){
+                    visibility: hidden;
+                } 
                 .home .btn{
                     scale:1.1;
                 }
@@ -590,11 +685,13 @@ section{
        
     } 
     @media (min-width: 1200px) { 
-       /* .home,.mask_home,.planets,.stars,.starWrap{
-            height: 100vh;
-        }  */
-        .rocket {
-            opacity:1;} 
+        .home .btn{
+            scale:1.2;
+        }
+        .planets img:nth-of-type(4){
+            visibility: visible;
+        }   
+       
         #skills{
             height:90vh;
         }
@@ -603,7 +700,7 @@ section{
             padding-top:120px;
         }
         .home h1{
-       font-size:2.6rem;
+       font-size:2.7rem;
         }
         .texts{
             padding-top:120px;
@@ -611,9 +708,6 @@ section{
             text-align: start;
         }
     
-        .home, .mask_home{
-            height: 90vh;
-        }
        
     #skills{
         padding-bottom: 100px;
@@ -628,13 +722,12 @@ section{
     }
     .planets img:nth-of-type(3){
         visibility: hidden;
+    }   
+    .home, .mask_home,.stars,
+       .starWrap{
+        height: 100vh;
     }
-
-    
 }
-
-
-
 
 
 @media (min-width: 1370px) { 
@@ -652,7 +745,8 @@ section{
         text-align: start;
     }
 
-    .home, .mask_home{
+    .home, .mask_home,.stars,
+       .starWrap{
         height: 90vh;
     }
     .home .btn{
@@ -664,11 +758,7 @@ section{
     padding-bottom: 100px;
     height: 60vh;
 }
-.rocket{
-top: -65%;
-left:0.5%;
-scale:0.17;
-}
+
 .planets {
     top:35%;
     left:12%;
@@ -677,5 +767,6 @@ scale:0.17;
 .planets img:nth-of-type(3){
     visibility: visible;
 }
-
 }
+
+
