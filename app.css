@@ -593,18 +593,7 @@ section{
 
 
 /*RESPONSIVE*/
-/*ipad*/
-@media only screen
-  and (min-device-width : 768px)
-  and (max-device-width : 1024px)
-  and (orientation:portrait) 
-{
-    .home, .mask_home,.stars,
-             .starWrap{
-                height: 60vh;
-            }
-    
-}
+
 @media (min-width: 768px) { 
     .home, .mask_home,.stars,
     .starWrap{
